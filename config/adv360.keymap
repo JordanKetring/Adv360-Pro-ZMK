@@ -34,7 +34,7 @@
         };
         lbrc_3: left_brace_3 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;fdsajjkl;
+            #binding-cells = <0>;
             bindings = <&kp LBRC>, <&kp N3>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
