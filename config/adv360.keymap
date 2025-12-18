@@ -39,7 +39,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         lpar_4: left_parenthesis_4 {
-            compatible = "zmk,behavior-mod-morph";fdsaffdsa123123
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LPAR>, <&kp N4>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
