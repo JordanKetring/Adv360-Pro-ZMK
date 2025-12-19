@@ -121,7 +121,7 @@
     keymap {
 		compatible = "zmk,keymap";
 
-		default_layer ={
+		default_layer {
 			display-name = "Base";
 			bindings = <
 				&kp CAPS  &plus_1   &lbkt_2  &lbrc_3  &lpar_4   &astrk_5 &tog 1                                                                &mo 4       &equal_6 &rpar_7  &rbrc_8   &rbkt_9       &minus_0       &under_at
