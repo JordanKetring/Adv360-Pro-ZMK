@@ -86,16 +86,16 @@
             bindings = <&kp UNDER>, <&kp AT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        excl_caret: exclamation_caret {
+        excl_hash: exclamation_hash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp CARET>;
+            bindings = <&kp EXCL>, <&kp HASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        amps_hash: ampersand_hash {
+        prcnt_amps: percent_ampersand {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp AMPS>, <&kp HASH>;
+            bindings = <&kp PRCNT>, <&kp AMPS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         copy_cut: copy_cut {
@@ -118,41 +118,33 @@
         };
     };
 
-    macros {
-        num_keypad: number_keypad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 1 &kp KP_NUM>;
-        };
-    };
-
     keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
-			display-name = "Base";
+		default_layer ={
+			display-nam=
 			bindings = <
-				&kp ESC   &plus_1   &lbkt_2  &lbrc_3  &lpar_4   &astrk_5 &num_keypad                                                            &mo 4      &equal_6 &rpar_7  &rbrc_8   &rbkt_9       &minus_0       &under_at
-				&kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T    &kp DLLR                                                               &kp PRCNT  &kp Y    &kp U    &kp I     &kp O         &kp P          &kp BSLH
-				&kp CAPS  &kp A     &kp S    &kp D    &kp F     &kp G    &excl_caret          &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL           &amps_hash &kp H    &kp J    &kp K     &kp L         &kp SEMI       &kp SQT
+				&kp CAPS  &plus_1   &lbkt_2  &lbrc_3  &lpar_4   &astrk_5 &tog 1                                                                &mo 4       &equal_6 &rpar_7  &rbrc_8   &rbkt_9       &minus_0       &under_at
+				&kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T    &kp CARET                                                             &kp DLLR    &kp Y    &kp U    &kp I     &kp O         &kp P          &kp BSLH
+				&kp ESC   &kp A     &kp S    &kp D    &kp F     &kp G    &excl_hash          &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL           &prcnt_amps &kp H    &kp J    &kp K     &kp L         &kp SEMI       &kp SQT
 				&kp LSHFT &kp Z     &kp X    &kp C    &kp V     &kp B                                   &kp RC(V) &kp LC(Y)                                &kp N    &kp M    &kp COMMA &kp DOT       &kp FSLH       &kp RSHFT
-				&mo 2     &kp GRAVE &kp LGUI &kp UP   &kp DOWN                       &kp BSPC &kp DEL   &copy_cut &kp RC(Z) &kp ENTER &kp SPACE                     &kp LEFT &kp RIGHT &home_page_up &end_page_down &mo 2
+				&mo 2     &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT                     &kp BSPC &kp DEL   &copy_cut &kp RC(Z) &kp ENTER &kp SPACE                      &kp DOWN &kp UP    &home_page_up &end_page_down &mo 2
 			>;
 		};
 		keypad {
 			display-name = "Kp";
 			bindings = <
 				&trans &trans &trans &trans &trans &trans  &trans                                              &trans &trans  &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &trans
-				&trans &trans &trans &trans &trans &trans  &trans                                              &trans &trans  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &trans
-				&trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans           &trans &trans  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &trans
-				&trans &trans &trans &trans &trans &trans                       &trans &trans                         &trans  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
-				&trans &trans &trans &trans &trans                &trans &trans &trans &trans &trans &kp KP_N0                &trans     &trans       &kp KP_DOT    &trans          &trans
+				&trans &trans &trans &trans &trans &trans  &trans                                              &trans &trans  &kp N7     &kp N8       &kp N9        &kp KP_MINUS    &trans
+				&trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans           &trans &trans  &kp N4     &kp N5       &kp N6        &kp KP_PLUS     &trans
+				&trans &trans &trans &trans &trans &trans                       &trans &trans                         &trans  &kp N1     &kp N2       &kp N3        &kp KP_ENTER    &trans
+				&trans &trans &trans &trans &trans                &trans &trans &trans &trans &trans &kp N0                   &trans     &trans       &kp DOT       &trans          &trans
 			>;
 		};
 		fn {
 			display-name = "Fn";
 			bindings = <
-				&kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &to 3                                           &mo 4  &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+				&kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &to 3                                            &mo 4  &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 				&trans &trans &trans &trans &trans &trans  &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
 				&trans &trans &trans &trans &trans &trans  &trans         &trans &trans &trans &trans       &trans &trans &trans &trans &trans  &trans  &trans
 				&trans &trans &trans &trans &trans &trans                       &trans &trans                      &trans &trans &trans &trans  &trans  &trans
@@ -162,11 +154,11 @@
 		classic_layer {
 			display-name = "Classic";
 			bindings = <
-				&kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4   &kp N5 &to 0                                                           &mo 4 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
-				&kp TAB   &kp Q     &kp W    &kp E    &kp R    &kp T  &none                                                            &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
-				&kp CAPS  &kp A     &kp S    &kp D    &kp F    &kp G  &kp ESC         &kp LCTRL &kp LALT &kp RALT  &kp RCTRL           &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+				&kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4   &kp N5 &to 0                                                           &mo 4 &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+				&kp TAB   &kp Q     &kp W    &kp E    &kp R    &kp T  &none                                                           &none &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
+				&kp ESC   &kp A     &kp S    &kp D    &kp F    &kp G  &kp CAPS        &kp LCTRL &kp LALT &kp RALT  &kp RCTRL          &none &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 				&kp LSHFT &kp Z     &kp X    &kp C    &kp V    &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-				&mo 2     &kp GRAVE &kp LGUI &kp UP   &kp DOWN                &kp BSPC &kp DEL  &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp LEFT &kp RIGHT &kp LBKT &kp RBKT &mo 2
+				&mo 2     &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT               &kp BSPC &kp DEL  &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp DOWN &kp UP    &kp LBKT &kp RBKT &mo 2
 			>;
 		};
 		mod {
@@ -178,10 +170,6 @@
 				&none &none        &none        &none        &none        &none                                &none &none                                        &none &none      &none      &none &none &none
 				&none &none        &none        &none        &none                                 &none &none &none &none &bl BL_TOG &rgb_ug RGB_TOG                   &bl BL_INC &bl BL_DEC &none &none &none
 			>;
-		};
-		extra1 { 
-			display-name = "Red";
-			status = "reserved";
 		};
 		extra2 { 
 			display-name = "Purple";
