@@ -86,16 +86,16 @@
             bindings = <&kp UNDER>, <&kp AT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        excl_hash: exclamation_hash {
+        caret_hash: caret_hash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp HASH>;
+            bindings = <&kp CARET>, <&kp HASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        prcnt_amps: percent_ampersand {
+        dllr_amps: dollar_ampersand {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp PRCNT>, <&kp AMPS>;
+            bindings = <&kp DLLR>, <&kp AMPS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         copy_cut: copy_cut {
@@ -104,16 +104,16 @@
             bindings = <&kp RC(C)>, <&kp RC(X)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        home_page_up: home_page_up {
+        pageUp_home: pageUp_home {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp HOME>, <&kp PAGE_UP>;
+            bindings = <&kp PAGE_UP>, <&kp HOME>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        end_page_down: end_page_down {
+        pageDown_end: pageDown_end {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp END>, <&kp PAGE_DOWN>;
+            bindings = <&kp PAGE_DOWN>, <&kp END>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -125,10 +125,10 @@
 			display-name = "Base";
 			bindings = <
 				&kp CAPS  &plus_1   &lbkt_2  &lbrc_3  &lpar_4   &astrk_5 &tog 1                                                                &mo 4       &equal_6 &rpar_7  &rbrc_8   &rbkt_9       &minus_0       &under_at
-				&kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T    &kp CARET                                                             &kp DLLR    &kp Y    &kp U    &kp I     &kp O         &kp P          &kp BSLH
-				&kp ESC   &kp A     &kp S    &kp D    &kp F     &kp G    &excl_hash          &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL           &prcnt_amps &kp H    &kp J    &kp K     &kp L         &kp SEMI       &kp SQT
+				&kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T    &kp EXCL                                                              &kp PRCNT   &kp Y    &kp U    &kp I     &kp O         &kp P          &kp BSLH
+				&kp ESC   &kp A     &kp S    &kp D    &kp F     &kp G    &caret_hash          &kp LCTRL &kp LALT  &kp RALT  &kp RCTRL          &dllr_amps  &kp H    &kp J    &kp K     &kp L         &kp SEMI       &kp SQT
 				&kp LSHFT &kp Z     &kp X    &kp C    &kp V     &kp B                                   &kp RC(V) &kp LC(Y)                                &kp N    &kp M    &kp COMMA &kp DOT       &kp FSLH       &kp RSHFT
-				&mo 2     &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT                     &kp BSPC &kp DEL   &copy_cut &kp RC(Z) &kp ENTER &kp SPACE                      &kp DOWN &kp UP    &home_page_up &end_page_down &mo 2
+				&mo 2     &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT                     &kp BSPC &kp DEL   &copy_cut &kp RC(Z) &kp ENTER &kp SPACE                      &kp DOWN &kp UP    &pageUp_home &pageDown_end &mo 2
 			>;
 		};
 		keypad {
